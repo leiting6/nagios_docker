@@ -21,7 +21,7 @@ RUN cd /opt/ && wget -c "https://assets.nagios.com/downloads/nagioscore/releases
 RUN cd /opt/ && tar zxf nagios-4.4.0.tar.gz
 RUN cd /opt/nagios-4.4.0 && ./configure --with-command-group=nagcmd && make all &&  make install && make install-init && make install-config && make install-commandmode && make install-webconf
 
-RUN htpasswd -bc /usr/local/nagios/etc/htpasswd.users nagiosadmin Lnc_2018
+RUN htpasswd -bc /usr/local/nagios/etc/htpasswd.users nagiosadmin XXXXXXXX
 
 RUN echo -e "\033[0;32;1mcheck grammar ....[0m" && /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 
